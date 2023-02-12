@@ -2,14 +2,22 @@ package nullany
 
 type NullAny[T any] struct {
 	val T
+	set bool
+}
+
+func NewNullAny[T any](v T) *NullAny[T] {
+	na := &NullAny[T]{}
+	na.SetVal(v)
+	return na
 }
 
 func (n *NullAny[T]) SetVal(v T) {
 	n.val = v
+	n.set = true
 }
 
 func (n *NullAny[T]) IsNil() bool {
-	return n.val == nil
+	return !n.set
 }
 
 func (n *NullAny[T]) Do(f func(T)) {
