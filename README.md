@@ -6,6 +6,24 @@ Nullany is a library to have nullable types for Golang.
 
 NullAny struct is for any type.
 
+### NullAny[T any]{} 
+It sets null to any type.
+
+### NewNullAny[T any](v T){}
+It sets non-null to any type.
+
+### SetVal
+It sets value to any type.
+
+### IsNil
+It returns true if it is null, false otherwise.
+
+### Do(func)
+It calls func when the val is non null.
+
+### DoThenElse(f1, f2)
+It calls f1 when the value is null and calls f2 when the value is non-null 
+
 ## NullBool Struct
 
 NullBool is a nullable bool type with handling logical `AND` and `OR`
