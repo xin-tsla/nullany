@@ -1,5 +1,8 @@
 package nullany
 
+/*
+@see https://github.com/xin-tsla/nullany/blob/main/README.md
+*/
 type NullAny[T any] struct {
 	val T
 	set bool

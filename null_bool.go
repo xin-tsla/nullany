@@ -2,6 +2,9 @@ package nullany
 
 import "errors"
 
+/*
+@see https://github.com/xin-tsla/nullany/blob/main/README.md
+*/
 type NullBool uint8
 
 const (
