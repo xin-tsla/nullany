@@ -2,11 +2,11 @@
 
 Nullany is a library to have nullable types for Golang.
 
-## NullAny
+## NullAny Struct
 
 NullAny struct is for any type.
 
-## NullBool
+## NullBool Struct
 
 NullBool is a nullable bool type with handling logical `AND` and `OR`
 NOTICE: in NullBool's `AND` and `OR`, if one of bool value is null, then the result of `AND` and `OR` will be the other
@@ -15,7 +15,7 @@ For example,
 
 ```
 
-Null AND Null = NUll
+Null AND Null = Null
 
 True AND Null = True
 False AND Null = False
