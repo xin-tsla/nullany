@@ -75,5 +75,4 @@ func TestNullBool_Or(t *testing.T) {
 	assert.True(t, a.Or(d).Must())
 	assert.False(t, c.Or(d).Must())
 	assert.True(t, a.Or(b).Or(c).Or(d).Must())
-
 }
