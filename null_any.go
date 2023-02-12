@@ -26,3 +26,11 @@ func (n *NullAny[T]) Do(f func(T)) {
 	}
 	f(n.val)
 }
+
+func (n *NullAny[T]) DoThenElse(f1 func(), f2 func(T)) {
+	if n.IsNil() {
+		f1()
+		return
+	}
+	f2(n.val)
+}
