@@ -21,13 +21,6 @@ func NewNullBoolVal(b bool) NullBool {
 	return False
 }
 
-func (n NullBool) Set(b bool) NullBool {
-	if b {
-		return True
-	}
-	return False
-}
-
 func (n NullBool) IsNull() bool {
 	return n == Null
 }
@@ -55,7 +48,6 @@ type op uint8
 const (
 	and op = iota
 	or
-	xor
 )
 
 func handleBinaryOp(a, b NullBool, o op) NullBool {
@@ -75,8 +67,6 @@ func handleBinaryOp(a, b NullBool, o op) NullBool {
 		return NewNullBoolVal(l && r)
 	case or:
 		return NewNullBoolVal(l || r)
-	case xor:
-		return NewNullBoolVal(l != r)
 	}
 	return Null
 }
@@ -87,8 +77,4 @@ func (n NullBool) And(nb NullBool) NullBool {
 
 func (n NullBool) Or(nb NullBool) NullBool {
 	return handleBinaryOp(n, nb, or)
-}
-
-func (n NullBool) Xor(nb NullBool) NullBool {
-	return handleBinaryOp(n, nb, xor)
 }
