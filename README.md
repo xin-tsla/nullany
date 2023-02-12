@@ -26,5 +26,5 @@ False OR Null = False
 ```
 
 Please be sure the above behavior is what you expect before you use this library.
-If the behavior does nit fit your need, please use the NullAny.
+If the behavior does not fit your need, please use the NullAny.
 
